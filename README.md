@@ -20,3 +20,5 @@ We are going to implement graph-based nearest-neighbor search on both GPU and mu
 | 3 (Nov 23) | Submit the milestone on Nov 23. Keep Thanksgiving week lighter: complete and check the warp version, run initial profiling, and finalize experiment scripts. |
 | 4 (Nov 30) | Run the main experiments, investigate bottlenecks, and prepare plots. Attempt stretch goals only after core results are complete. |
 | 5 (Dec 7) | Finish measurements, submit the report on Dec 10, and present the poster on Dec 11. |
+
+Detailed task checklist and work split: [PLAN.md](PLAN.md)
