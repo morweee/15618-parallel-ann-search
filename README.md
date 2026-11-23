@@ -22,3 +22,13 @@ We are going to implement graph-based nearest-neighbor search on both GPU and mu
 | 5 (Dec 7) | Finish measurements, submit the report on Dec 10, and present the poster on Dec 11. |
 
 Detailed task checklist and work split: [PLAN.md](PLAN.md)
+
+## Running the code
+
+On a GHC machine:
+
+```
+make graph-check    # downloads SIFT1M (~500 MB), converts it, builds and exports the graph, sweeps L
+```
+
+Outputs go to `results/`. On macOS without OpenMP, build with `make OMP=`.
