@@ -8,18 +8,21 @@ We are going to implement graph-based nearest-neighbor search on both GPU and mu
 ## Reports
 
 - [Project Proposal](proposal.md) ([PDF](proposal.pdf)), Nov 9
-- Milestone Report, due Nov 23
+- [Milestone Report](milestone.md) ([PDF](milestone.pdf))
 - Final Report, due Dec 10
 
 ## Schedule
 
-| Week | Planned work |
-|------------|------------------------------------------------------------------------|
-| 1 (Nov 9) | Submit the proposal on Nov 9. Prepare datasets, export the graph, and implement the serial reference. Complete the Nov 12 graph-feasibility checkpoint. |
-| 2 (Nov 16) | Implement the OpenMP and thread-per-query CUDA versions. Check correctness, collect initial timings, and begin the warp version. Prepare the milestone report. |
-| 3 (Nov 23) | Submit the milestone on Nov 23. Keep Thanksgiving week lighter: complete and check the warp version, run initial profiling, and finalize experiment scripts. |
-| 4 (Nov 30) | Run the main experiments, investigate bottlenecks, and prepare plots. Attempt stretch goals only after core results are complete. |
-| 5 (Dec 7) | Finish measurements, submit the report on Dec 10, and present the poster on Dec 11. |
+Completed: data conversion, graph export, serial search, and the SIFT1M graph-feasibility check (see the milestone report).
+
+| Dates | Mu-Wei Hsieh | Ryder Chou |
+|------|--------------|--------------|
+| Nov 24–26 | 1. OpenMP version<br>2. Verify results match serial<br>3. CPU thread scaling (1/2/4/8 threads) | 1. Thread-per-query CUDA kernel<br>2. Decide visited-set storage<br>3. Check recall matches serial |
+| Nov 27–29 | 1. GIST1M conversion and graph check<br>2. Experiment scripts (CSV output)<br>3. Plotting script | 1. First GPU timings<br>2. Test block sizes 64/128/256<br>3. Start warp-per-query kernel |
+| Nov 30–Dec 2 | 1. Experiment A (recall vs. throughput) for CPU and thread-per-query<br>2. Experiment B (batch size) for CPU and thread-per-query | 1. Finish and verify warp-per-query kernel<br>2. Nsight Compute profiling (experiment D) |
+| Dec 3–6 | 1. Experiment C (SIFT1M vs. GIST1M)<br>2. Final plots | 1. Bottleneck analysis from profiling<br>2. Stretch goals, if core results are done |
+| Dec 7–9 | 1. Final report: results and analysis sections | 1. Final report: GPU design and profiling sections |
+| Dec 10–11 | 1. Submit report (Dec 10)<br>2. Poster<br>3. Submit source code to Autolab | 1. Submit report (Dec 10)<br>2. Poster<br>3. Poster session (Dec 11, 8:30am) |
 
 Detailed task checklist and work split: [PLAN.md](PLAN.md)
 

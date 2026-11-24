@@ -35,6 +35,12 @@ graph-check: $(BINS) $(DATA)/base.fvecs
 	./bin/export_graph $(DATA) $(M) $(EFC)
 	./bin/graph_check $(DATA) $(DATA)/graph_M$(M)_ef$(EFC).bin val results/graph_check_M$(M)_ef$(EFC)_val.csv
 
+# Report PDFs, e.g. make milestone.pdf (needs pandoc and xelatex)
+%.pdf: %.md docs/pdf-style.tex docs/pdf-filter.lua
+	pandoc $< -o $@ --pdf-engine=xelatex -V geometry:margin=1in -V mainfont=Helvetica \
+	  -V colorlinks=true -V urlcolor=blue -V linkcolor=blue \
+	  -H docs/pdf-style.tex --lua-filter=docs/pdf-filter.lua
+
 clean:
 	rm -rf bin
 
